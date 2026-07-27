@@ -1,4 +1,4 @@
-#Experiment 3                                                 Omkar Tate 66 CSBS
+#Experiment 3                                                 
 
 # Function to Add Two Numbers
 def add(x, y):

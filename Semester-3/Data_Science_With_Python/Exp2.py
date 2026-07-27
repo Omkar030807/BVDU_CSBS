@@ -1,4 +1,4 @@
-#Experiment 2                                                 Omkar Tate 66 CSBS
+#Experiment 2                                                 
 #List 
 
 # Creating a List

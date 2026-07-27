@@ -1,4 +1,4 @@
-#Experiment 1                                        Omkar Tate 66 CSBS
+#Experiment 1                                       
 #Arithmetic Operations
 #Addition
 a = 5   
