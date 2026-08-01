@@ -13,9 +13,9 @@ public: void getdata(){
     cin>>designation;
 }
 public: void showdata(){
-    cout<<"\nEmployee ID :- " <<emp_id;
-    cout<<"\nEmployee Salary :- "<<salary;
-    cout<<"\nEmployee Designation :- "<<designation;
+    cout<<"\n Employee ID :- " <<emp_id;
+    cout<<"\n Employee Salary :- "<<salary;
+    cout<<"\n Employee Designation :- "<<designation;
 }
 };
 int main(){
