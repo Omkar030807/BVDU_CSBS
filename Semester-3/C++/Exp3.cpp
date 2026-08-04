@@ -19,3 +19,4 @@ int main(){
     cout<<"\n X = "<<x;
     cout<<"\n Y = "<<y;
 }
+
