@@ -1,37 +1,40 @@
-//Program For Sorting of Array
 #include <iostream>
 using namespace std;
-
-int main() {
-    int a[100], n, i, j, temp;
-
-    cout << "Enter number of elements: ";
-    cin >> n;
-
-    cout << "Enter " << n << " elements:" << endl;
-    for (i = 0; i < n; i++) {
-        cin >> a[i];
+int main()
+{
+    int arr[5], key;
+    int *ptr = arr;
+    cout << "Enter 5 elements: ";
+    for(int i = 0; i < 5; i++)
+        cin >> *(ptr + i);
+    cout << "Enter element to search: ";
+    cin >> key;
+    int found = 0;
+    for(int i = 0; i < 5; i++)
+    {
+        if(*(ptr + i) == key)
+        {
+            cout << "Element found at position " << i + 1 << endl;
+            found = 1;
+            break;
+        }
     }
-
-    cout << "Original array: ";
-    for (i = 0; i < n; i++) {
-        cout << a[i] << " ";
-    }
-
-    for (i = 0; i < n - 1; i++) {
-        for (j = i + 1; j < n; j++) {
-            if (a[i] > a[j]) {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+    if(found == 0)
+        cout << "Element not found" << endl;
+    for(int i = 0; i < 4; i++)
+    {
+        for(int j = i + 1; j < 5; j++)
+        {
+            if(*(ptr + i) > *(ptr + j))
+            {
+                int temp = *(ptr + i);
+                *(ptr + i) = *(ptr + j);
+                *(ptr + j) = temp;
             }
         }
     }
-
-    cout << "\nSorted array: ";
-    for (i = 0; i < n; i++) {
-        cout << a[i] << " ";
-    }
-
+    cout << "Sorted array: ";
+    for(int i = 0; i < 5; i++)
+        cout << *(ptr + i) << " ";
     return 0;
 }
