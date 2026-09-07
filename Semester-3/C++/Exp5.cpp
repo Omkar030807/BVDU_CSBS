@@ -3,22 +3,22 @@ using namespace std;
 class Base
 {
 private:
-    int privateData;
+    int a;
 protected:
-    int protectedData;
+    int b;
 public:
-    int publicData;
+    int c;
     void setData()
     {
-        privateData = 10;
-        protectedData = 20;
-        publicData = 30;
+        a = 10;
+        b = 20;
+        c = 30;
     }
     void displayBase()
     {
-        cout << "Private Data: " << privateData << endl;
-        cout << "Protected Data: " << protectedData << endl;
-        cout << "Public Data: " << publicData << endl;
+        cout << "Private : " << a << endl;
+        cout << "Protected : " << b << endl;
+        cout << "Public : " << c << endl;
     }
 };
 class Derived : public Base
@@ -27,9 +27,9 @@ public:
     void displayDerived()
     {
         cout << "Protected Data in Derived Class: "
-             << protectedData << endl;
+             << b << endl;
         cout << "Public Data in Derived Class: "
-             << publicData << endl;
+             << c << endl;
     }
 };
 int main()
@@ -41,7 +41,6 @@ int main()
     cout << "\nAccessing data in Derived class:" << endl;
     d.displayDerived();
     cout << "\nAccessing public data from main(): "
-         << d.publicData << endl;
-
+         << d.c << endl;
     return 0;
 }
