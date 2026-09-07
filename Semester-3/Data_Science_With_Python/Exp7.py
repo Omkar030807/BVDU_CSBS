@@ -1,12 +1,9 @@
 import matplotlib.pyplot as plt
-
 data = [1, 2, 2, 3, 4, 7, 9]
-
 # Calculate mean, median, and mode
 mean = sum(data) / len(data)
 median = sorted(data)[len(data) // 2]
 mode = max(set(data), key=data.count)
-
 # Create histogram
 plt.hist(
     data,
@@ -15,7 +12,6 @@ plt.hist(
     color='g',
     edgecolor='black'
 )
-
 # Plot mean, median, and mode
 plt.axvline(
     mean,
@@ -24,7 +20,6 @@ plt.axvline(
     linewidth=2,
     label=f'Mean: {mean}'
 )
-
 plt.axvline(
     median,
     color='b',
@@ -32,7 +27,6 @@ plt.axvline(
     linewidth=2,
     label=f'Median: {median}'
 )
-
 plt.axvline(
     mode,
     color='y',
@@ -40,11 +34,8 @@ plt.axvline(
     linewidth=2,
     label=f'Mode: {mode}'
 )
-
 plt.legend()
-
 plt.title('Central Tendency Measures')
 plt.xlabel('Value')
 plt.ylabel('Frequency')
-
 plt.show()
