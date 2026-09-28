@@ -1,0 +1,6 @@
+Student Record
+----------------------
+Roll Number : 66
+Name        : Omkar
+Marks       : 80.00
+Status      : File Handling Completed
