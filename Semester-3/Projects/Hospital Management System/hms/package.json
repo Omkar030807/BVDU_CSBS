@@ -1,0 +1,40 @@
+{
+  "name": "hospital-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hospital Management System college PBL project",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n BACKEND,FRONTEND -c blue,green \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "typecheck": "npm run typecheck --workspace backend && npm run typecheck --workspace frontend",
+    "db:migrate": "npm run db:migrate --workspace backend",
+    "db:seed": "npm run db:seed --workspace backend",
+    "test": "npm run test --workspace backend",
+    "test:smoke": "node tests/phase1-smoke.mjs",
+    "test:phase2": "node tests/phase2-smoke.mjs",
+    "test:phase3": "node tests/phase3-smoke.mjs",
+    "test:phase4": "node tests/phase4-smoke.mjs",
+    "test:phase5": "node tests/phase5-smoke.mjs",
+    "test:phase6": "node tests/phase6-smoke.mjs",
+    "test:phase7": "node tests/phase7-smoke.mjs",
+    "test:phase8": "node tests/phase8-smoke.mjs",
+    "test:phase9": "node tests/phase9-smoke.mjs",
+    "test:phase10": "node tests/phase10-smoke.mjs",
+    "test:phase11": "node tests/phase11-smoke.mjs",
+    "test:phase12": "node tests/phase12-acceptance.mjs",
+    "test:acceptance": "node tests/phase12-acceptance.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

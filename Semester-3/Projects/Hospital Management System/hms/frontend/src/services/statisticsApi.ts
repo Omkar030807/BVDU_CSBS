@@ -1,0 +1,1 @@
+import type{StatisticsReport}from'../types/statistics';import{apiRequest}from'./api';export const statisticsRequest=(from:string,to:string)=>apiRequest<StatisticsReport>(`/statistics?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`);

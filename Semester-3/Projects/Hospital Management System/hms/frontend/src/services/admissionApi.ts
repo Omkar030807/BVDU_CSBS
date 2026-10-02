@@ -1,0 +1,11 @@
+import type{Admission,AdmissionOptions,AdmissionPayload,AdmissionStatus,Bed,BedPayload,BedStatus}from'../types/admission';import{apiRequest}from'./api';
+const q=(v:Record<string,unknown>)=>{const p=new URLSearchParams();Object.entries(v).forEach(([k,x])=>{if(x!==undefined&&x!=='')p.set(k,String(x))});return p};
+export const listBedsRequest=(f:{search?:string;status?:BedStatus;ward?:string})=>apiRequest<{beds:Bed[]}>(`/beds?${q(f)}`);
+export const createBedRequest=async(p:BedPayload)=>(await apiRequest<{bed:Bed}>('/beds',{method:'POST',body:JSON.stringify(p)})).bed;
+export const updateBedRequest=async(id:string,p:Partial<BedPayload>)=>(await apiRequest<{bed:Bed}>(`/beds/${id}`,{method:'PATCH',body:JSON.stringify(p)})).bed;
+export const deleteBedRequest=(id:string)=>apiRequest<void>(`/beds/${id}`,{method:'DELETE'});
+export const listAdmissionsRequest=(f:{search?:string;status?:AdmissionStatus;ward?:string})=>apiRequest<{admissions:Admission[]}>(`/admissions?${q(f)}`);
+export const admissionOptionsRequest=()=>apiRequest<AdmissionOptions>('/admissions/options');
+export const createAdmissionRequest=async(p:AdmissionPayload)=>(await apiRequest<{admission:Admission}>('/admissions',{method:'POST',body:JSON.stringify(p)})).admission;
+export const dischargeAdmissionRequest=async(id:string)=>(await apiRequest<{admission:Admission}>(`/admissions/${id}/discharge`,{method:'POST'})).admission;
+export const deleteAdmissionRequest=(id:string)=>apiRequest<void>(`/admissions/${id}`,{method:'DELETE'});

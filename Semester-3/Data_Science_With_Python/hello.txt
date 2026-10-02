@@ -1,0 +1,2 @@
+Python makes file handling easy.
+Learning Python is fun.

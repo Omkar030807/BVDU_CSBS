@@ -1,0 +1,3 @@
+import{Router,type RequestHandler}from'express';import type{AdmissionController,BedController}from'../controllers/AdmissionController.js';import{requirePermissions}from'../middleware/auth.js';
+export const createBedRouter=(c:BedController,a:RequestHandler)=>{const r=Router();r.use(a,requirePermissions('admissions'));r.get('/',c.list);r.post('/',c.create);r.patch('/:id',c.update);r.delete('/:id',c.remove);return r};
+export const createAdmissionRouter=(c:AdmissionController,a:RequestHandler)=>{const r=Router();r.use(a,requirePermissions('admissions'));r.get('/options',c.options);r.get('/',c.list);r.post('/',c.create);r.get('/:id',c.get);r.patch('/:id',c.update);r.post('/:id/discharge',c.discharge);r.delete('/:id',c.remove);return r};

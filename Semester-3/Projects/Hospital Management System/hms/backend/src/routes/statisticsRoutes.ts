@@ -1,0 +1,1 @@
+import{Router,type RequestHandler}from'express';import type{StatisticsController}from'../controllers/StatisticsController.js';import{requirePermissions}from'../middleware/auth.js';export const createStatisticsRouter=(c:StatisticsController,a:RequestHandler)=>{const r=Router();r.use(a,requirePermissions('statistics'));r.get('/',c.report);return r};

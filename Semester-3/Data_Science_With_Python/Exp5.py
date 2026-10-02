@@ -17,7 +17,7 @@ print(df.head())
 # Data Cleaning
 df.fillna(0, inplace=True)
 df.dropna(inplace=True)
-
+0
 # Grouping and Aggregation
 grouped = df.groupby('City')['Age'].mean()
 print(grouped)

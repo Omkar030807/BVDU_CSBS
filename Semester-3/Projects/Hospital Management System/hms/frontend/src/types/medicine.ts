@@ -1,0 +1,3 @@
+export interface Medicine{id:string;medicineId:string;name:string;category:string;manufacturer:string;quantity:number;unitPrice:number;expiryDate:string;lowStockThreshold:number;isLowStock:boolean;isExpired:boolean;isExpiringSoon:boolean;createdAt:string;updatedAt:string;}
+export interface MedicinePayload{name:string;category:string;manufacturer:string;quantity:number;unitPrice:number;expiryDate:string;lowStockThreshold:number;}
+export type MedicineEditPayload=Omit<MedicinePayload,'quantity'>;export interface StockPayload{quantityChange:number;reason:string;}export interface PharmacyAlerts{lowStock:Medicine[];expired:Medicine[];expiringSoon:Medicine[];counts:{lowStock:number;expired:number;expiringSoon:number};}
