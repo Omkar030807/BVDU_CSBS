@@ -1,0 +1,5 @@
+build/
+*.log
+medicore.log
+data/*.db
+.vscode/
